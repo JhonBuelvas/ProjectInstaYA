@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { Link} from "react-router-dom"
 export default function Form() {
     return (
         <div className='bg-white px-20 py-6 rounded-3xl border-2 border-gray-100'>
@@ -42,7 +42,11 @@ export default function Form() {
                 </div>
                 <div className='mt-8 flex justify-between items-center'>
                     <p className='font-medium text-base'>No tienes una cuenta?</p>
-                    <button className='text-blue-500 text-base font-medium ml-2'>Registrate</button>
+                    <button className='text-blue-500 text-base font-medium ml-2'>
+                        <Link to="/index" className='sidebar'>
+                            Registrate
+                        </Link>
+                    </button>
                 </div>
             </div>
         </div>
