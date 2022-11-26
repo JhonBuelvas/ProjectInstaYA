@@ -5,13 +5,20 @@ import App from './App';
 import Register from './components/register';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import Gestion from './components/Gestion';
+import Create from './components/Create';
+import Actualizar from './components/Actualizar';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
       <Routes>
         <Route exact path="/" element={<App/>} />
-        <Route path="/index" element={<Register/>} />
+        <Route path="/Register" element={<Register/>} />
+        <Route path="/Gestion" element={<Gestion/>} />
+        <Route path="/Create" element={<Create/>} />
+        <Route path="/Actualizar" element={<Actualizar/>} />
       </Routes>
     </Router>
   </React.StrictMode>

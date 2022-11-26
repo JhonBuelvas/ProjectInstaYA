@@ -26,10 +26,10 @@ export default function Form() {
                         />
                         <label className='ml-2 font-medium text-base' for='recordar'>Recordar mi contraseña</label>
                     </div>
-                    <button className='ml-3 font-medium text-base text-blue-500'>Olvide mi contraseña</button>
+                    <button className='ml-3 font-medium text-base text-blue-500'> Olvide mi contraseña</button>
                 </div>
                 <div className='mt-8 flex flex-col gap-y-4'>
-                    <button className='active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 rounded-xl bg-blue-500 text-white text-lg font-bold'>Ingresar</button>
+                    <button className='active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 rounded-xl bg-blue-500 text-white text-lg font-bold'><Link to="/Gestion" className='sidebar'>Ingresar</Link></button>
                     <button className='flex rounded-xl py-3 border-2 border-gray-100 items-center justify-center gap-2 active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all'>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.26644 9.76453C6.19903 6.93863 8.85469 4.90909 12.0002 4.90909C13.6912 4.90909 15.2184 5.50909 16.4184 6.49091L19.9093 3C17.7821 1.14545 15.0548 0 12.0002 0C7.27031 0 3.19799 2.6983 1.24023 6.65002L5.26644 9.76453Z" fill="#EA4335"/>

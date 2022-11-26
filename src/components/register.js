@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Register (){
   return (
@@ -16,28 +17,28 @@ export default function Register (){
             <h1 className="text-2xl font-semibold">INSTAYA</h1>
             <ul className=" mt-6">
               <li className="mt-4 w-56 bg-cyan-50 hover:bg-teal-200 hover:rounded-full hover:w-56 hover:mx-2">
-                <a href="">
+                <Link to='/Register' className='sidebar'>
                   <span className="icon"><i className="fa-sharp fa-solid fa-pen-to-square"></i></span>
                   <span className="menu-item-label">Registrarse</span>
-                </a>
+                </Link>
               </li>
               <li className="mt-4 w-56 bg-cyan-50 hover:bg-teal-200 hover:rounded-full hover:w-56 hover:mx-2">
-                <a href="">
+                <Link to='/Gestion' className='sidebar'>
                   <span className="icon"><i className="fa-sharp fa-solid fa-clipboard"></i></span>
                   <span className="menu-item-label">Listado de ordenes</span>
-                </a>
+                </Link>
               </li>
               <li className="mt-4 w-56 bg-cyan-50 hover:bg-teal-200 hover:rounded-full hover:w-56 hover:mx-2">
-                <a href="">
+                <Link to='/Create' className='sidebar'>
                   <span className="icon"><i className="fa-sharp fa-solid fa-truck-fast"></i></span>
                   <span className="menu-item-label">Crear orden</span>
-                </a>
+                </Link>
               </li>
               <li className="mt-4 w-56 bg-cyan-50 hover:bg-teal-200 hover:rounded-full hover:w-56 hover:mx-2">
-                <a href="">
+                <Link to='/' className='sidebar'>
                   <span className="icon"><i className="fa-solid fa-xmark"></i></span>
                   <span className="menu-item-label">Salir</span>
-                </a>
+                </Link>
               </li>
             </ul>
 
@@ -52,12 +53,12 @@ export default function Register (){
         <div className="mt-14 mx-20">
           <label className="text-lg font-medium" for="grid-first-name">
             <i className=" fa-sharp fa-solid fa-arrow-left"></i>
-            <a href="">Regresar a inicio sesión</a> 
+            <Link to='/' className='sidebar'>Salir</Link>
           </label>
         </div>
         <div className="mt-16 mx-0 mr-96">
             <button className=" transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 text-white font-bold py-2 px-4 rounded">
-                Guardar
+              <Link to='/' className='sidebar'> Guardar usuario</Link>
             </button>
         </div>
       </div> 
