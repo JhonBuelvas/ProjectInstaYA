@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+//import {useEffect, useState} from 'react'
+
 export default function Create (){
+  //const [ordenes, setOrdenes]= useState(null)
+
+
   return (
     <div className="relative h-screen flex flex-row">
     {/* <!--Columna de presentacion--> */}
@@ -10,32 +15,32 @@ export default function Create (){
       </div>
       <div className="justify-center mb-24 w-80">
           <div className="absolute border-t-4 rounded-full -mt-20 mx-12 mb-2">
-            <img className="w-40 h-40  rounded-full mr-4" href="/Imagenes/Logo.jpeg"/>
+            <img className="w-40 h-40  rounded-full mr-4" src={process.env.PUBLIC_URL + '/assets/img/Logo.png'}  alt="" />
           </div>
           <div className="mx-6 mt-24">
-            <h1 className="text-2xl font-semibold">INSTAYA</h1>
+            <h1 className="text-2xl font-semibold">INSTA YA!</h1>
             <ul className=" mt-6">
               <li className="mt-4 w-56 bg-cyan-50 hover:bg-teal-200 hover:rounded-full hover:w-56 hover:mx-2">
                 <Link to='/Register' className='sidebar'>
-                  <span className="icon"><i className="fa-sharp fa-solid fa-pen-to-square"></i></span>
+                  <span className="icon mr-2"><i className="fa-sharp fa-solid fa-pen-to-square"></i></span>
                   <span className="menu-item-label">Registrarse</span>
                 </Link>
               </li>
               <li className="mt-4 w-56 bg-cyan-50 hover:bg-teal-200 hover:rounded-full hover:w-56 hover:mx-2">
                 <Link to='/Gestion' className='sidebar'>
-                  <span className="icon"><i className="fa-sharp fa-solid fa-clipboard"></i></span>
+                  <span className="icon mr-2"><i className="fa-sharp fa-solid fa-clipboard"></i></span>
                   <span className="menu-item-label">Listado de ordenes</span>
                 </Link>
               </li>
               <li className="mt-4 w-56 bg-cyan-50 hover:bg-teal-200 hover:rounded-full hover:w-56 hover:mx-2">
                 <Link to='/Create' className='sidebar'>
-                  <span className="icon"><i className="fa-sharp fa-solid fa-truck-fast"></i></span>
+                  <span className="icon mr-2"><i className="fa-sharp fa-solid fa-truck-fast"></i></span>
                   <span className="menu-item-label">Crear orden</span>
                 </Link>
               </li>
               <li className="mt-4 w-56 bg-cyan-50 hover:bg-teal-200 hover:rounded-full hover:w-56 hover:mx-2">
                 <Link to='/' className='sidebar'>
-                  <span className="icon"><i className="fa-solid fa-xmark"></i></span>
+                  <span className="icon mr-2"><i className="fa-solid fa-xmark"></i></span>
                   <span className="menu-item-label">Salir</span>
                 </Link>
               </li>
@@ -50,18 +55,18 @@ export default function Create (){
       <div className="fixed flex justify-between content-center h-64 w-screen bg-gray-100">
         <div className="mt-14 mx-20">
           <label className="text-lg font-medium" for="grid-first-name">
-            <i className=" fa-sharp fa-solid fa-arrow-left"></i>
+            <i className=" fa-sharp fa-solid fa-arrow-left mr-2"></i>
             <Link to='/Gestion' className='sidebar'> Regresar</Link>
           </label>
         </div>
-        <div className="mt-16 mx-0 mr-96">
+        <div className="mt-12  mr-80">
             <button className=" transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 text-white font-bold py-2 px-4 rounded">
                 <Link to='/Gestion' className='sidebar'> Guardar orden</Link>
             </button>
         </div>
       </div> 
            
-      <div className="absolute flex h-96 w-9/12 h-5/6 left-80 top-36 mx-0 justify-center place-self-center rounded-lg shadow-2xl bg-white" style={{overflow: 'scroll'}}>
+      <div className="absolute flex h-96 w-9/12 h-5/6 left-80 top-28 mx-0 justify-center place-self-center rounded-b-3xl rounded-t-3xl shadow-2xl bg-white" style={{overflowY: 'scroll'}}>
         <form className="w-full w-11/12 mt-6">
           {/* <!--Nombre y apellido--> */}
             <div className="flex flex-wrap -mx-3 mb-6">
@@ -136,7 +141,7 @@ export default function Create (){
                     <p className="text-red-500 text-xs italic">El número de celuar es requerido</p>
                 </div>
                 
-                <div className="flex pb-6">
+                <div className="flex w-full pb-6">
                   <div className="flex flex-col px-3 mb-0 md:mb-0">
                     <div className="">
                       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
@@ -147,14 +152,19 @@ export default function Create (){
                       <input className="appearance-none bg-transparent border-none  w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="date" />
                     </div>
                   </div>
-                  <div className="flex flex-col px-3 mb-0 md:mb-0">
-                    <div className="">
-                      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                        Hora de recogida
-                      </label>
-                    </div>
-                    <div className="border-b border-teal-500 px-3 mb-4">
-                      <input className="appearance-none bg-transparent border-none  w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="time" />
+                  <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                        Horario de recogida
+                    </label>
+                    <div className="relative">
+                      <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                        <option>Mañana</option>
+                        <option>Medio día</option>
+                        <option>Tarde</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                      </div>
                     </div>
                   </div>
                 </div>
